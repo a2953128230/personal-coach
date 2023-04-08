@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".posedetector.camerax.CameraFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/control"
+            app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/top_control"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:gravity="end"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ToggleButton
+                    android:id="@+id/speaker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOff="開起聲音"
+                    android:textOn="關閉聲音" />
+
+                <ToggleButton
+                    android:id="@+id/facing_switch"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/camera_flip_white"
+                    android:textOff=""
+                    android:textOn="" />
+            </LinearLayout>
+
+        <com.example.sport_test.posedetector.GraphicOverlay
+            android:id="@+id/graphic_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/previewView"
+            app:layout_constraintLeft_toLeftOf="@id/previewView"
+            app:layout_constraintRight_toRightOf="@id/previewView"
+            app:layout_constraintTop_toTopOf="@id/previewView" />
+
+
+
+        <RelativeLayout
+            android:id="@id/control"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#000"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="相簿" />
+
+            <ToggleButton
+                android:id="@+id/start_Stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textOff="開始"
+                android:textOn="結束" />
+
+            <Button
+                android:id="@+id/capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="拍照"
+                android:textOff=""
+                android:textOn="" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
