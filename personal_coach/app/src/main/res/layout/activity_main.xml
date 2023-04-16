@@ -104,6 +104,21 @@
             android:layout_marginTop="160dp"
             android:background="@android:color/transparent" />
 
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="16dp"
+            android:text="Personal-Coach"
+            android:textSize="20sp"
+            android:textColor="#FFD700"
+            android:textStyle="bold"
+            android:shadowColor="#000000"
+            android:shadowDx="0.5"
+            android:shadowDy="0.5"
+            />
+
     </RelativeLayout>
 
     <!--    側邊攔    -->
