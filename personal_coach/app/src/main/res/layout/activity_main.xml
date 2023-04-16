@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:openDrawer="start">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/body">
+
+        <Button
+            android:id="@+id/menu_button"
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/menu" />
+
+        <Button
+            android:id="@+id/btn_situp"
+            android:onClick="click_situps"
+            android:layout_width="72dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="320dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_pushup"
+            android:onClick="click_pushups"
+            android:layout_width="62dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="250dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_GluteBridge"
+            android:onClick="click_gluteBridges"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="390dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_squat"
+            android:onClick="click_squats"
+            android:layout_width="wrap_content"
+            android:layout_height="111dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="480dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_ProneExtension"
+            android:onClick="click_button5"
+            android:layout_width="100dp"
+            android:layout_height="72dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="230dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_situpst"
+            android:layout_width="146dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="430dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_squatst"
+            android:layout_width="146dp"
+            android:layout_height="94dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="600dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_pushupst"
+            android:layout_width="98dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="250dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_gluteBridgest"
+            android:layout_width="131dp"
+            android:layout_height="66dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="460dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn_proextension"
+            android:layout_width="161dp"
+            android:layout_height="78dp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="160dp"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
+
+    <!--    側邊攔    -->
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/layer_bg">
+
+        <Button
+            android:id="@+id/mainmenuButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="110dp"
+            style="@style/ButtonStyle"
+            android:text="首頁" />
+
+        <Button
+            android:id="@+id/RecordButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="160dp"
+            style="@style/ButtonStyle"
+            android:text="紀錄" />
+
+        <Button
+            android:id="@+id/BMIbutton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="210dp"
+            style="@style/ButtonStyle"
+            android:text="BMI計算" />
+
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
