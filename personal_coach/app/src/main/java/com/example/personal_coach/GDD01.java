@@ -56,6 +56,7 @@ public class GDD01 extends Activity
       }
     });
 
+//    側邊攔
     bmiButton.setOnClickListener(new Button.OnClickListener() {
       @Override
       public void onClick(View view) {

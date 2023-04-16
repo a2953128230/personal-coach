@@ -66,28 +66,20 @@ public void onCreate(Bundle savedInstanceState)
 
 
 //BMI值格式化
-private String format(double num)
-        {
-                String msg = String.format("%.2f",num);
-
+private String format(double num) {
+        String msg = String.format("%.2f", num);
         return msg;
-
-        }
-
+}
 //取得BMI值
 private String getBMI (double height, double weight)
         {
-        // TO DO
                         double bmi = weight/(height*height);
                         String msg = getString(R.string.report_result)+format(bmi);
-
         return msg;
         }
-
-//依BMI值取得建議
+//依BMI值給出建議
 private String getAdvice (String Sex, double height, double weight)
         {
-        // TO DO
                 double bmi = weight/(height*height);
                 String msg="";
                 if(Sex.equals("M")){
@@ -111,9 +103,7 @@ private String getAdvice (String Sex, double height, double weight)
 
                         } else {
                                 msg = getString(R.string.advice_average);
-
                         }
-
                 }
         return msg;
         }
@@ -150,5 +140,4 @@ private String getAdvice (String Sex, double height, double weight)
                  AlertDialog dialog = builder.create();
                  dialog.show();
          }
-
  }
