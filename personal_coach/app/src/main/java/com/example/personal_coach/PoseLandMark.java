@@ -71,8 +71,6 @@ public class PoseLandMark {
         return "Pose landmarks: " + key.getLandmarkCount() + "\n";
     }
 
-
-
     /* 計算並回傳關鍵點之間的角度 */
     public static double getAngle(PoseLandMark firstPoint, PoseLandMark midPoint, PoseLandMark lastPoint) {
         double result =

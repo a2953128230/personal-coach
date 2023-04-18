@@ -62,13 +62,15 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="回上一頁"
-      android:textStyle="bold"></Button>
+      android:textStyle="bold"
+      style="@style/ButtonStyle"></Button>
 
   <Button
       android:id="@+id/button"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="儲存"
+      style="@style/ButtonStyle"
       android:textStyle="bold" />
 
   <ImageView
