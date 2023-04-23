@@ -1,5 +1,4 @@
 package com.example.personal_coach;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.pm.ApplicationInfo;
@@ -86,6 +85,8 @@ public class startSport extends AppCompatActivity {
     /* 獲取應用程序訊息、幫助設置相機預覽 */
     private ApplicationInfo applicationInfo;
     private CameraXPreviewHelper cameraHelper;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -290,11 +291,13 @@ public class startSport extends AppCompatActivity {
         }
         if (poseCount % 1 == 0) {
             final String poseCountStr = String.format("%.0f", poseCount);
+
             Log.v(TAG, sportTAG + poseCountStr);
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
                     poseCountTextView.setText(sportTAG + poseCountStr);
+
                     if (!spokenNumbers.contains(poseCountStr)) {
                         spokenNumbers.add(poseCountStr);
                         tts.speak(poseCountStr, TextToSpeech.QUEUE_FLUSH, null, null);

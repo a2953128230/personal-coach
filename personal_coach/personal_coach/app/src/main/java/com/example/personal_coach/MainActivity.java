@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         Button btn_pushup = findViewById(R.id.btn_pushup); // "伏地挺身"
@@ -154,4 +154,5 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("chooseExerciseName", exerciseName);
         startActivity(intent);
     }
+
 }
