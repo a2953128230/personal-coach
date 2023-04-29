@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         Button recordButton = findViewById(R.id.RecordButton);
         Button mainMenu = findViewById(R.id.mainmenuButton);
 
+
         bmiButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,13 +132,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mainMenu.setOnClickListener(new Button.OnClickListener() {
+        mainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+                finish();
             }
         });
+
 
         Button menuButton = findViewById(R.id.menu_button);
         menuButton.setOnClickListener(new View.OnClickListener() {

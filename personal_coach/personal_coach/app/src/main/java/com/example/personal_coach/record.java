@@ -65,13 +65,16 @@ public class record extends Activity {
             }
         });
 
-        mainMenu.setOnClickListener(new Button.OnClickListener() {
+        mainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(record.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
+                finish();
             }
         });
+
 
     }
 }
