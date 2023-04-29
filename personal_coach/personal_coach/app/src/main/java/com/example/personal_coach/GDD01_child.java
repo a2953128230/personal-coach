@@ -56,9 +56,7 @@ public void onCreate(Bundle savedInstanceState)
         b2.setOnClickListener(new Button.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                        showAlertDialog(date,Sex,BMI_result);
-
+                        showAlertDialog(date,Sex,height,weight);
                 }
         });
 
@@ -107,11 +105,14 @@ private String getAdvice (String Sex, double height, double weight)
                 }
         return msg;
         }
-        private void showAlertDialog(final String date, final String sex, final String bmi)
+        private void showAlertDialog(final String date, final String sex, double height, double weight)
          {
+                 double bmi = weight/(height*height);
+                 String bmiString = String.format("%.2f", bmi);
+
                  AlertDialog.Builder builder = new AlertDialog.Builder(this);
                  builder.setTitle("BMI資訊");
-                 String msg = "日期 : "+date+"\n"+"性別 : "+sex+"\n"+bmi;
+                 String msg = "日期 : "+date+"\n"+"性別 : "+sex+"\n"+ "BMI結果 : " + bmiString;
                  builder.setMessage(msg);
                  builder.setPositiveButton("確認", new DialogInterface.OnClickListener() {
                          @Override
@@ -122,7 +123,7 @@ private String getAdvice (String Sex, double height, double weight)
                                  if(true) {
                                          editor.putString("pDate" + value, date);
                                          editor.putString("pSex" + value, sex);
-                                         editor.putString("pBmi" + value, bmi);
+                                         editor.putString("pBmi" + value, bmiString);
                                          editor.putInt("value", (value+1));
                                          editor.apply();
                                  }

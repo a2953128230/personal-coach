@@ -8,20 +8,29 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/head">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                android:text="計算BMI"
+                android:textSize="20sp"
+                android:textColor="#F5DEB3"
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowDx="0.5"
+                android:shadowDy="0.5"
+                />
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!--TO DO-->
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/title"
-                    android:textStyle="bold" />
+                android:orientation="vertical"
+                android:layout_marginTop="60dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -33,6 +42,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="5dp"
                         android:text="@string/text1"
                         android:textStyle="bold" />
 
@@ -44,6 +55,10 @@
                         android:ems="10"
                         android:inputType="numberDecimal"
                         android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
 
                 </LinearLayout>
 
@@ -57,6 +72,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="5dp"
                         android:text="@string/text2"
                         android:textStyle="bold" />
 
@@ -69,6 +86,10 @@
                         android:inputType="numberDecimal"
                         android:textStyle="bold" />
 
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -80,6 +101,8 @@
                         android:id="@+id/textView4"
                         android:layout_width="137dp"
                         android:layout_height="32dp"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="5dp"
                         android:text="@string/text3"
                         android:textStyle="bold" />
 
@@ -116,7 +139,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="日期:"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:text="日期："
                         android:textStyle="bold" />
 
                     <EditText
@@ -128,15 +153,34 @@
                         android:inputType="date"
                         android:textStyle="bold" />
 
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/button1"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/compute"
-                    style="@style/ButtonStyle"
-                    android:textStyle="bold" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:id="@+id/button1"
+                        style="@style/ButtonStyle"
+                        android:layout_width="340dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/compute"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="23dp"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
