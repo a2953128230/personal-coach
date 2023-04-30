@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 public class GDD01 extends Activity
 {
   private EditText etheight;
@@ -31,6 +34,7 @@ public class GDD01 extends Activity
     Button bmiButton = findViewById(R.id.BMIbutton);
     Button recordButton = findViewById(R.id.RecordButton);
     Button mainMenu = findViewById(R.id.mainmenuButton);
+    Button menuButton = findViewById(R.id.label);
 
     Button b1 = (Button) findViewById(R.id.button1);
     b1.setOnClickListener(new Button.OnClickListener()
@@ -79,6 +83,14 @@ public class GDD01 extends Activity
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
+      }
+    });
+
+    menuButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        drawerLayout.openDrawer(GravityCompat.START);
       }
     });
 

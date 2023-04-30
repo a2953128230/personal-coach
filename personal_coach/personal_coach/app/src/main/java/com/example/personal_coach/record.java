@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +23,7 @@ public class record extends Activity {
         Button bmiButton = findViewById(R.id.BMIbutton);
         Button recordButton = findViewById(R.id.RecordButton);
         Button mainMenu = findViewById(R.id.mainmenuButton);
+        Button menuButton = findViewById(R.id.label);
 
         SharedPreferences preferences = getSharedPreferences("myPrefs", MODE_PRIVATE);
         int value = preferences.getInt("value", 0);
@@ -72,6 +75,14 @@ public class record extends Activity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
 

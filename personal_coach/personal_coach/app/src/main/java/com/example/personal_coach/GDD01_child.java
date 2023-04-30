@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class GDD01_child extends Activity
  {
@@ -61,6 +63,8 @@ public void onCreate(Bundle savedInstanceState)
         });
 
         }
+
+
 
 
 //BMI值格式化
