@@ -1,6 +1,7 @@
 package com.example.personal_coach;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.SurfaceTexture;
@@ -291,6 +292,29 @@ public class startSport extends AppCompatActivity {
         }
         if (poseCount % 1 == 0) {
             final String poseCountStr = String.format("%.0f", poseCount);
+
+
+            SharedPreferences sharedPref = getSharedPreferences("counter", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+
+            if ("伏地挺身".equals(chooseExercise)) {
+                editor.putFloat("Push_Up", poseCount);
+                editor.apply();
+            } else if ("臀橋".equals(chooseExercise)) {
+                editor.putFloat("Glute-Bridge", poseCount);
+                editor.apply();
+            } else if ("仰臥起坐".equals(chooseExercise)) {
+                editor.putFloat("Sit_Up", poseCount);
+                editor.apply();
+            } else if ("深蹲".equals(chooseExercise)) {
+                editor.putFloat("Squat", poseCount);
+                editor.apply();
+            } else if ("俯臥背伸".equals(chooseExercise)) {
+                editor.putFloat("Prone-Extension", poseCount);
+                editor.apply();
+            }
+
+
 
             Log.v(TAG, sportTAG + poseCountStr);
             runOnUiThread(new Runnable() {
