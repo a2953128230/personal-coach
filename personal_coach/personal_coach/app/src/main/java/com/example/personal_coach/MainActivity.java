@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView squat_textView;
     private TextView proneextension_textView;
     private SharedPreferences sharedPref;
+    private SharedPreferences sharedPref1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +30,46 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sharedPref = getSharedPreferences("counter", MODE_PRIVATE);
+        sharedPref1 = getSharedPreferences("myPrefs1", MODE_PRIVATE);
+
+        SharedPreferences.Editor editor3 = sharedPref1.edit();
 
         pushup_textView = findViewById(R.id.pushup_textView);
         glutebridge_textView = findViewById(R.id.glutebridge_textView);
         situp_textView = findViewById(R.id.situp_textView);
         squat_textView = findViewById(R.id.squat_textView);
         proneextension_textView = findViewById(R.id.proneextension_textView);
+
+        float pushupCountTotal = sharedPref1.getFloat("PushUpTotal", 0.0f);
+        float glutebridgeCountTotal = sharedPref1.getFloat("GluteBridgeTotal", 0.0f);
+        float situpCountTotal = sharedPref1.getFloat("SitUpTotal", 0.0f);
+        float squatCountTotal = sharedPref1.getFloat("SquatTotal", 0.0f);
+        float proneextensionCountTotal = sharedPref1.getFloat("ProneExtensionTotal", 0.0f);
+
+        Button refreshButton = findViewById(R.id.refresh_button);
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor3.putFloat("PushUpTotal", 0.0f);
+                editor3.putFloat("GluteBridgeTotal", 0.0f);
+                editor3.putFloat("SitUpTotal", 0.0f);
+                editor3.putFloat("SquatTotal", 0.0f);
+                editor3.putFloat("ProneExtensionTotal", 0.0f);
+                editor3.commit();
+
+                final String PushUpCountStr = String.format("%.0f", pushupCountTotal);
+                final String gluteBridgeCountStr = String.format("%.0f", glutebridgeCountTotal);
+                final String sitUpCountStr = String.format("%.0f", situpCountTotal);
+                final String squatCountStr = String.format("%.0f", squatCountTotal);
+                final String proneExtensionCountStr = String.format("%.0f", proneextensionCountTotal);
+
+                pushup_textView.setText(PushUpCountStr);
+                glutebridge_textView.setText(gluteBridgeCountStr);
+                situp_textView.setText(sitUpCountStr);
+                squat_textView.setText(squatCountStr);
+                proneextension_textView.setText(proneExtensionCountStr);
+            }
+        });
 
         Button btn_pushup = findViewById(R.id.btn_pushup); // "伏地挺身"
         btn_pushup.setOnClickListener(new View.OnClickListener() {
@@ -173,29 +208,66 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        SharedPreferences.Editor editor1 = sharedPref1.edit();
+        SharedPreferences.Editor editor2 = sharedPref.edit();
+
+        float pushupCountTotal = sharedPref1.getFloat("PushUpTotal", 0.0f);
+        float glutebridgeCountTotal = sharedPref1.getFloat("GluteBridgeTotal", 0.0f);
+        float situpCountTotal = sharedPref1.getFloat("SitUpTotal", 0.0f);
+        float squatCountTotal = sharedPref1.getFloat("SquatTotal", 0.0f);
+        float proneextensionCountTotal = sharedPref1.getFloat("ProneExtensionTotal", 0.0f);
+
+        float pushUpCount = 0.0f;
+        float gluteBridgeCount = 0.0f;
+        float sitUpCount = 0.0f;
+        float squatCount = 0.0f;
+        float proneExtensionCount = 0.0f;
+
         // 讀poseCount值
-        float pushUpCount = sharedPref.getFloat("Push-Up", 0);
-        float gluteBridgeCount = sharedPref.getFloat("Glute-Bridge", 0);
-        float sitUpCount = sharedPref.getFloat("Sit-Up", 0);
-        float squatCount = sharedPref.getFloat("Squat", 0);
-        float proneExtensionCount = sharedPref.getFloat("Prone-Extension", 0);
+        pushUpCount = sharedPref.getFloat("Push-Up", 0);
+        gluteBridgeCount = sharedPref.getFloat("Glute-Bridge", 0);
+        sitUpCount = sharedPref.getFloat("Sit-Up", 0);
+        squatCount = sharedPref.getFloat("Squat", 0);
+        proneExtensionCount = sharedPref.getFloat("Prone-Extension", 0);
+
+        pushupCountTotal += pushUpCount;
+        glutebridgeCountTotal += gluteBridgeCount;
+        situpCountTotal += sitUpCount;
+        squatCountTotal += squatCount;
+        proneextensionCountTotal += proneExtensionCount;
+
+        editor2.putFloat("Push-Up", 0.0f);
+        editor2.putFloat("Glute-Bridge", 0.0f);
+        editor2.putFloat("Sit-Up", 0.0f);
+        editor2.putFloat("Squat", 0.0f);
+        editor2.putFloat("Prone-Extension", 0.0f);
+
+        editor2.commit();
 
         Log.d("MainActivity", "squatCount = " + squatCount);
 
         // 將poseCount的值設置到TextView上
-        final String PushUpCountStr = String.format("%.0f", pushUpCount);
-        final String gluteBrudgeCountStr = String.format("%.0f", gluteBridgeCount);
-        final String sitUpCountStr = String.format("%.0f", sitUpCount);
-        final String squatCountStr = String.format("%.0f", squatCount);
-        final String proneExtensionCountStr = String.format("%.0f", proneExtensionCount);
+        final String PushUpCountStr = String.format("%.0f", pushupCountTotal);
+        final String gluteBridgeCountStr = String.format("%.0f", glutebridgeCountTotal);
+        final String sitUpCountStr = String.format("%.0f", situpCountTotal);
+        final String squatCountStr = String.format("%.0f", squatCountTotal);
+        final String proneExtensionCountStr = String.format("%.0f", proneextensionCountTotal);
 
         Log.d("Squat Count", "Squat Count: " + squatCountStr);
 
         pushup_textView.setText(PushUpCountStr);
-        glutebridge_textView.setText(gluteBrudgeCountStr);
+        glutebridge_textView.setText(gluteBridgeCountStr);
         situp_textView.setText(sitUpCountStr);
         squat_textView.setText(squatCountStr);
         proneextension_textView.setText(proneExtensionCountStr);
+
+        editor1.putFloat("PushUpTotal", pushupCountTotal);
+        editor1.putFloat("GluteBridgeTotal", glutebridgeCountTotal);
+        editor1.putFloat("SitUpTotal", situpCountTotal);
+        editor1.putFloat("SquatTotal", squatCountTotal);
+        editor1.putFloat("ProneExtensionTotal", proneextensionCountTotal);
+
+        editor1.commit();
     }
 
     private void jumpToCamera(String exerciseName) {
