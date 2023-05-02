@@ -23,12 +23,12 @@
 
         <Button
             android:id="@+id/btn_situp"
-            android:onClick="click_situps"
-            android:layout_width="72dp"
-            android:layout_height="64dp"
-            android:layout_marginLeft="150dp"
+            android:layout_width="100dp"
+            android:layout_height="61dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="320dp"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:onClick="click_situps" />
 
         <Button
             android:id="@+id/btn_pushup"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="111dp"
             android:layout_marginLeft="180dp"
-            android:layout_marginTop="480dp"
+            android:layout_marginTop="460dp"
             android:background="@android:color/transparent" />
 
         <Button
@@ -63,7 +63,7 @@
             android:layout_width="100dp"
             android:layout_height="72dp"
             android:layout_marginLeft="200dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="220dp"
             android:background="@android:color/transparent" />
 
         <Button
@@ -76,7 +76,7 @@
         <Button
             android:id="@+id/btn_squatst"
             android:layout_width="146dp"
-            android:layout_height="94dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="260dp"
             android:layout_marginTop="600dp"
             android:background="@android:color/transparent" />
@@ -166,8 +166,8 @@
 
         <Button
             android:id="@+id/refresh_button"
-            android:layout_width="58dp"
-            android:layout_height="47dp"
+            android:layout_width="46dp"
+            android:layout_height="45dp"
             android:layout_marginLeft="300dp"
             android:layout_marginTop="670dp"
             android:background="@drawable/rotation" />
@@ -213,7 +213,6 @@
             android:layout_marginTop="210dp"
             style="@style/ButtonStyle"
             android:text="BMI計算" />
-
 
     </RelativeLayout>
 
