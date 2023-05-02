@@ -14,9 +14,9 @@
 
         <Button
             android:id="@+id/label"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="0dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/transparent"
             android:text="BMI紀錄"
@@ -113,6 +113,14 @@
             android:layout_height="50dp"
             android:layout_marginTop="210dp"
             android:text="BMI計算" />
+
+        <Button
+            android:id="@+id/clear_button"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="260dp"
+            android:text="清空BMI紀錄" />
 
 
     </RelativeLayout>

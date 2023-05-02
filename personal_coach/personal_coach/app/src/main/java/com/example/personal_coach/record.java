@@ -53,6 +53,29 @@ public class record extends Activity {
                 DividerItemDecoration.VERTICAL));
         recyclerView.setAdapter(adapter);
 
+        Button clearButton = findViewById(R.id.clear_button);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                data1.clear();
+                data2.clear();
+                data3.clear();
+
+                SharedPreferences preferences = getSharedPreferences("myPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.apply();
+                // Clear the data in your ArrayLists as well, if necessary
+                // ...
+                // Notify the adapter that the data has changed
+                adapter.notifyDataSetChanged();
+
+                DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+                drawerLayout.closeDrawers();
+            }
+        });
+
+
         bmiButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
