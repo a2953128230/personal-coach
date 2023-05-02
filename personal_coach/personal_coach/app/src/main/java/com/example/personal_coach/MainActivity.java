@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
                 final String squatCountStr = String.format("%.0f", squatCountTotal);
                 final String proneExtensionCountStr = String.format("%.0f", proneextensionCountTotal);
 
-                pushup_textView.setText(PushUpCountStr);
-                glutebridge_textView.setText(gluteBridgeCountStr);
-                situp_textView.setText(sitUpCountStr);
-                squat_textView.setText(squatCountStr);
-                proneextension_textView.setText(proneExtensionCountStr);
+                pushup_textView.setText(String.format("%.0f", (pushupCountTotal/36.0)*100) + "%(Count:" + PushUpCountStr + "/36)");
+                glutebridge_textView.setText(String.format("%.0f", (glutebridgeCountTotal/36.0)*100) + "%(Count:" + gluteBridgeCountStr + "/36)");
+                situp_textView.setText(String.format("%.0f", (situpCountTotal/36.0)*100) + "%(Count:" + sitUpCountStr + "/36)");
+                squat_textView.setText(String.format("%.0f", (squatCountTotal/36.0)*100) + "%(Count:" + squatCountStr + "/36)");
+                proneextension_textView.setText(String.format("%.0f", (proneextensionCountTotal/36.0)*100) + "%(Count:" + proneExtensionCountStr + "/36)");
             }
         });
 
@@ -255,11 +255,11 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("Squat Count", "Squat Count: " + squatCountStr);
 
-        pushup_textView.setText(PushUpCountStr);
-        glutebridge_textView.setText(gluteBridgeCountStr);
-        situp_textView.setText(sitUpCountStr);
-        squat_textView.setText(squatCountStr);
-        proneextension_textView.setText(proneExtensionCountStr);
+        pushup_textView.setText(String.format("%.0f", (pushupCountTotal/36.0)*100) + "%(Count:" + PushUpCountStr + "/36)");
+        glutebridge_textView.setText(String.format("%.0f", (glutebridgeCountTotal/36.0)*100) + "%(Count:" + gluteBridgeCountStr + "/36)");
+        situp_textView.setText(String.format("%.0f", (situpCountTotal/36.0)*100) + "%(Count:" + sitUpCountStr + "/36)");
+        squat_textView.setText(String.format("%.0f", (squatCountTotal/36.0)*100) + "%(Count:" + squatCountStr + "/36)");
+        proneextension_textView.setText(String.format("%.0f", (proneextensionCountTotal/36.0)*100) + "%(Count:" + proneExtensionCountStr + "/36)");
 
         editor1.putFloat("PushUpTotal", pushupCountTotal);
         editor1.putFloat("GluteBridgeTotal", glutebridgeCountTotal);

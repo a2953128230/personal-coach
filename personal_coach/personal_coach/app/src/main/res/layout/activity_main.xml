@@ -123,51 +123,46 @@
             android:id="@+id/pushup_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="220dp"
-            android:background="@android:color/black"
-            android:textColor="@android:color/white"
-            android:textSize="26sp" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="300dp"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/glutebridge_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="235dp"
-            android:layout_marginTop="450dp"
-            android:background="@android:color/black"
-            android:textColor="@android:color/white"
-            android:textSize="26sp" />
+            android:layout_marginLeft="255dp"
+            android:layout_marginTop="490dp"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/situp_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="390dp"
-            android:background="@android:color/black"
-            android:textColor="@android:color/white"
-            android:textSize="26sp" />
+            android:layout_marginTop="470dp"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/squat_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="220dp"
-            android:layout_marginTop="610dp"
-            android:background="@android:color/black"
-            android:textColor="@android:color/white"
-            android:textSize="26sp" />
+            android:layout_marginLeft="240dp"
+            android:layout_marginTop="643dp"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/proneextension_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="210dp"
-            android:layout_marginTop="160dp"
-            android:background="@android:color/black"
-            android:textColor="@android:color/white"
-            android:textSize="26sp" />
+            android:layout_marginLeft="233dp"
+            android:layout_marginTop="150dp"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/refresh_button"
